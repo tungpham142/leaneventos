@@ -1,12 +1,90 @@
 body {
+    font-family: Roboto, Arial, sans-serif;
     background-color: #FFFFFF ;
     color: #595959 ;
-};
+    padding: 0;
+    margin: 0;
+}
 
 h1 {
     color: #595959 ;
-};
+}
 
-.icon-top {
-    display:flex;
-};
+.container  {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header  {
+    padding: 30px 30px 0px 30px;
+    min-height: 70px;
+    color: #595959 ;
+}
+
+header a{
+    text-decoration: none; 
+}
+
+header ul{
+    margin: 0;
+    padding: 0;
+}
+
+header li{
+    display: inline;
+    padding: 0 20px 0 20px; 
+}
+
+header #logo{
+    float: left;
+}
+
+header #logo img{
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+header #logo h1{
+    float: right;
+    margin: 10px;
+    font-size: 24px;
+    color: black;
+}
+
+header nav{
+    float: right;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#showcase img{
+    max-height: 650px;
+    width: 100%;
+}
+
+#main-info h3 {
+    overflow: hidden;
+    text-align: center;
+    margin: 100px 0 0 0;
+}
+
+#main-info h3:before,
+#main-info h3:after {
+ background-color: #ffc300;
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ width: 5%;
+}
+#main-info h3:before {
+ right: 1em;
+ margin-left: -50%;
+}
+#main-info h3:after {
+ left: 1em;
+ margin-right: -50%;
+}
