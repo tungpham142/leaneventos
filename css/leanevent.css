@@ -1,3 +1,4 @@
+
 body {
     font-family: Roboto, Arial, sans-serif;
     background-color: #FFFFFF ;
@@ -8,22 +9,24 @@ body {
 
 h1 {
     color: #595959 ;
+    line-height: 200%;
 }
 
-.container  {
+#container  {
     width: 80%;
     margin: auto;
     overflow: hidden;
 }
 
 header  {
-    padding: 30px 30px 0px 30px;
+    padding: 30px 50px 0px 30px;
     min-height: 70px;
     color: #595959 ;
 }
 
-header a{
+header a, a:visited, a:link, a:active{
     text-decoration: none; 
+    color: #595959;
 }
 
 header ul{
@@ -33,7 +36,11 @@ header ul{
 
 header li{
     display: inline;
-    padding: 0 20px 0 20px; 
+    padding: 0 10px 0 10px; 
+}
+
+header a:hover{
+    color: #ffc300;
 }
 
 header #logo{
@@ -48,7 +55,7 @@ header #logo img{
 
 header #logo h1{
     float: right;
-    margin: 10px;
+    margin: 0 0 10px;
     font-size: 24px;
     color: black;
 }
@@ -59,32 +66,694 @@ header nav{
     margin-top: 10px;
 }
 
-#showcase img{
-    max-height: 650px;
-    width: 100%;
+#showcase{
+    background: url(../imagenes/logo-blanco.png) no-repeat right;
+    background-position-x: 80%;
+    background-size: 20%;
 }
 
-#main-info h3 {
+#showcase .slide_img{
+    z-index: -1000;
+}
+
+#main-info{
+    text-align: center;
+}
+
+#main-info h2 {
+    overflow: hidden;
+    text-align: center;
+    margin: 100px 0 30px 0;
+}
+
+#main-info h2:before,
+#main-info h2:after {
+    background-color: #ffc300;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 5%;
+}
+#main-info h2:before {
+    right: 1em;
+    margin-left: -50%;
+}
+#main-info h2:after {
+    left: 1em;
+    margin-right: -50%;
+}
+
+#main-info p{
+    text-align: center;
+    width: 70%;
+    margin-left: 15%;
+}
+
+#bottom-info{
+    background-color: #ffc300;
+    margin-top: 200px;
+}
+
+#bottom-info .box{
+    text-align: center;
+    float: left;
+    margin-left: 10%; 
+    width: 20%;
+    padding: 10px;
+}
+
+#home-quote{
+    margin: 0;
+    min-height: 400px;
+    background: url('../imagenes/bannerabout.jpg') 0 250px;
+    text-align: center;
+}
+
+#home-quote h3{
+    margin-top: 10%; 
+    font-size: 150%;
+}
+
+#home-quote p{
+    font-style: italic; 
+    margin-left: 45%; 
+}
+
+#home-aliados{
+    text-align: center;
+}
+
+#home-aliados h3 {
     overflow: hidden;
     text-align: center;
     margin: 100px 0 0 0;
 }
 
-#main-info h3:before,
-#main-info h3:after {
- background-color: #ffc300;
- content: "";
- display: inline-block;
- height: 1px;
- position: relative;
- vertical-align: middle;
- width: 5%;
+#home-aliados h3:before,
+#home-aliados h3:after {
+    background-color: #ffc300;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 5%;
 }
-#main-info h3:before {
- right: 1em;
- margin-left: -50%;
+
+#home-aliados h3:before {
+    right: 1em;
+    margin-left: -50%;
 }
-#main-info h3:after {
- left: 1em;
- margin-right: -50%;
+
+#home-aliados h3:after {
+    left: 1em;
+    margin-right: -50%;
+}
+
+#i1, #i2, #i3{ display: none;}
+
+.slider-holder{
+    margin: 0 auto;
+    position: relative;
+    height: 0;
+    padding-bottom: 40%;
+}
+
+.slider-holder .slide_img{
+    position: absolute;
+    width: 100%;;
+    height: 100%;
+}
+.slider-holder .slide_img img{
+    width: inherit;
+    height: inherit;
+}
+
+.slider-holder #nav_slide{
+	width: 100%;
+	bottom: 12%;
+	height: 11px;
+	position: absolute;
+	text-align: center;
+	z-index: 99;
+	cursor: default;
+}
+
+#nav_slide .dots{
+	top: -5px;
+	width: 18px;
+	height: 18px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: #FFFFFF;
+    transition: .4s;
+}
+
+#nav_slide .dots:hover {
+	cursor: pointer;
+	background-color: #ffc300;
+	transition: .25s
+}
+
+.slide_img{z-index: -1;}
+
+#i1:checked ~ #one,
+#i2:checked ~ #two,
+#i3:checked ~ #three
+{z-index: -1; animation: scroll 1s ease-in-out;}
+
+#i1:checked  ~  #nav_slide #dot1,
+#i2:checked  ~  #nav_slide #dot2,
+#i3:checked  ~  #nav_slide #dot3
+{ background-color: #ffc300;}
+
+#part1, #part2, #part3 {display: none;}
+
+.slider-icon{
+    width: 63%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.icon-img{
+    position: relative;
+    width: 2632px;
+    height: 200px; 
+}
+
+
+label span{
+    position: absolute;
+    font-size: 100pt;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slider-button{
+    width: 100%;
+}
+
+.prev, .next{
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF; 
+    border: solid;
+    padding: 5px 10px;
+    border-color: #FFFFFF;
+    background: #595959;
+}
+
+.prev:hover, .next:hover{
+    transition: .3s;
+    color: #ffc300; 
+}
+
+@keyframes scroll{
+	0%{	opacity:.4;}
+	100%{opacity:1;}
+}		
+
+#email-subscribe{
+    text-align: center;
+    margin: 100px 0 0 0;
+    padding: 15px;
+    color: #000000;
+    background: #ffc300;
+    overflow: hidden;
+}
+
+#email-subscribe #container{
+    margin: auto;
+}
+
+#email-subscribe h2{
+    float: left;
+    width: 20%;
+}
+
+#email-subscribe svg{
+    float: left;
+    width: 2%;
+    padding: 0 0;
+    margin-top: 20px; 
+    margin-left: 25%;
+}
+
+#email-subscribe{
+    padding: 40px;
+}
+
+#email-subscribe form{
+    margin-top: 35px;
+    margin-right: 20%;
+}
+
+#email-subscribe input[type="email"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+#email-subscribe input {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 15px 0px 0px 15px;
+    height: 20px;
+    box-sizing: content-box;
+}
+
+#email-subscribe button {
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+    height: 34px;
+    border-radius: 0px 15px 15px 0px;
+    margin-left: -4px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+#email-subscribe button:hover {
+    background-color: #ffc300;
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 15px #ffffff;
+}
+
+#social-contact{
+    margin-top: 50px;
+    text-align: center;
+}
+
+#social-contact svg{
+    width: 1.5%;
+    padding: 15px 15px;
+}
+
+#social-icon{
+    color: #ffc300;
+}
+
+footer{
+    font-family: Roboto, Arial, sans-serif;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 0.7em;
+}
+
+footer span{
+    color: #ffc300;
+}
+
+#about-main{
+    text-align: center;
+    min-height: 400px;
+    background: url(../imagenes/bannerabout.jpg) 0px -200px;
+    background-color: #ffffff; 
+}
+
+#about-main h1{
+    color: #000000;
+    margin-top: 10%;
+    font-size: 40px;
+}
+
+#about-main h3{
+    color: #000000;
+}
+
+#about-main h3 span{
+    color: #ffc300;
+    padding: 15px;
+}
+
+#about-col h1{
+    font-size: 24px;
+    margin: 10px;
+}
+
+#about-col h2{
+    font-size: 20px;
+    margin: 0;
+}
+
+#about-col p{
+    color: #595959;
+}
+
+article {
+    margin-top: 100px;
+    -webkit-columns: 2 100px;
+    -moz-columns: 2 100px;
+    columns: 2 100px;
+    -webkit-column-gap: 8em;
+    -moz-column-gap: 8em;
+    column-gap: 8em;
+}
+
+#about-subcol{
+    -webkit-columns: 2 100px;
+    -moz-columns: 2 100px;
+    columns: 2 100px;
+    -webkit-column-gap: 8em;
+    -moz-column-gap: 8em;
+    column-gap: 8em;
+}
+
+#contact-main{
+    text-align: center;
+    min-height: 400px;
+    background: url(../imagenes/bannercontacto.jpg) 0 -200px;
+    background-color: #ffffff; 
+}
+
+#contact-main h1{
+    color: #000000;
+    margin-top: 10%;
+    font-size: 40px;
+}
+
+#contact-main h3{
+    color: #000000;
+}
+
+#contact-main h3 span{
+    color: #ffc300;
+    padding: 15px;
+}
+
+#contact-info{
+    color: #000000;
+    margin-left: 10%;
+    margin-top: 100px; 
+}
+
+.contact-col{
+    float: left;
+    width: 25%;
+}
+
+.contact-col:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.contact-col img{
+    width: 25%;
+    margin-left: 10%;
+}
+
+#social-text{
+    color: #ffc300;
+    margin-left: 0;
+}
+
+#contact-form input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+}
+  
+#contact-form input[type=submit] {
+    background-color: #ffc300;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px 15px 15px 15px;
+    cursor: pointer;
+    width: 200px;
+    margin-left: 40%;
+    margin-top: 20px;
+}
+  
+#contact-form input[type=submit]:hover {
+    background-color: #595959;
+}
+  
+#contact-form .wrap-form {
+    margin: 5% 16%;
+    width: 70%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    color: #595959;
+}
+
+#contact-form label{
+    font-weight: bold;
+}
+
+.firstname{
+    float: left;
+    width: 48%;
+}
+
+.lastname{
+    float: right;
+    width: 49%;
+}
+
+#contact-info svg{
+    float: left;
+    width: 4%;
+    padding: 15px 15px;
+}
+
+#boletos-main{
+    text-align: center;
+    min-height: 400px;
+    background: url(../imagenes/bannercboleto.jpg) 0 -200px;
+    background-color: #ffffff; 
+}
+
+#boletos-main h1{
+    color: #000000;
+    margin-top: 10%;
+    font-size: 40px;
+}
+
+#boletos-main h3{
+    color: #000000;
+}
+
+#boletos-main h3 span{
+    color: #ffc300;
+    padding: 15px;
+}
+
+#list-item #container{
+    margin-left: 18%;
+}
+
+.item-col{
+    margin-top: 50px;
+    margin-right: 2%;
+    float: left;
+    text-align: center;
+}
+
+.item-col img{
+    width: 280px;
+    height: 320px;
+}
+
+.item-col:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#iniciar-main{
+    text-align: center;
+    min-height: 400px;
+    background: url(../imagenes/bannerlogin.jpg) 0 -200px;
+    background-color: #ffffff; 
+}
+
+#iniciar-main h1{
+    color: #000000;
+    margin-top: 10%;
+    font-size: 40px;
+}
+
+#iniciar-main h3{
+    color: #000000;
+}
+
+#iniciar-main h3 span{
+    color: #ffc300;
+    padding: 15px;
+}
+
+#login-form input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+}
+  
+#login-form input[type=submit] {
+    background-color: #ffc300;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px 15px 15px 15px;
+    cursor: pointer;
+    width: 100px;
+    margin-left: 45%;
+    margin-top: 20px;
+}
+  
+#login-form input[type=submit]:hover {
+    background-color: #595959;
+}
+  
+#login-form .wrap-form {
+    margin: 5% 24%;
+    width: 50%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    color: #595959;
+}
+
+#login-form label{
+    font-weight: bold;
+}
+
+.username{
+    float: left;
+    width: 48%;
+}
+
+.password{
+    float: right;
+    width: 49%;
+}
+
+
+@media(max-width: 1404px){
+    #email-subscribe input[type="email"]{
+        width: 150px;
+    }
+}
+
+@media(max-width: 1025px){
+    #email-subscribe input[type="email"]{
+        width: 100px;
+    }
+}
+
+@media(max-width: 840px){
+    header #logo,
+    header #logo h1,
+    header nav,
+    header nav ul,
+    header nav li,
+    #email-subscribe,
+    #home-quote,
+    #home-aliados,
+    #contact-main,
+    #contact-form,
+    #about-main,
+    .contact-col,
+    h1,
+    #list-item,
+    #login-form
+    {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    header nav li{
+        width: 200%;
+    }
+
+    header{
+        padding-bottom: 20px;
+    }
+
+    #main-info h2{
+        margin: 40px;
+        margin-bottom: 0;
+    }
+
+    #email-subscribe button{
+        display: block;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #email-subscribe input[type="email"]{
+        display: block;
+        width: 100%;
+        border-radius: 0;
+        margin-bottom: 5px;
+    }
+
+    #email-subscribe svg{
+        display: none;
+    }
+
+    .contact-col svg{
+        display: none;
+    }
+
+    #bottom-info{
+        margin-top: 50px;
+    }
+
+    #bottom-info .box{
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    #home-quote{
+        min-height: 150px;
+    }
+
+    #home-aliados .slider-icon{
+        margin-left: 2%;
+        width: 100%
+    }
+
+    #social-contact svg{
+        width: 10%;
+    }
+
+    .contact-col{
+        margin: 0;
+    }
+
+    .contact-col img{
+        text-align: center;
+    }
+
+    #contact-form input[type=submit],
+    #login-form input[type=submit]{
+        margin: 0;
+    }
+
+    footer{
+        padding: 20px;
+    }
 }
