@@ -29,6 +29,11 @@ header a, a:visited, a:link, a:active{
     color: #595959;
 }
 
+header a:active{
+    text-decoration: none; 
+    color: #ffc300;
+}
+
 header ul{
     margin: 0;
     padding: 0;
@@ -69,7 +74,7 @@ header nav{
 #showcase{
     background: url(../imagenes/logo-blanco.png) no-repeat right;
     background-position-x: 80%;
-    background-size: 20%;
+    background-size: 18%;
 }
 
 #showcase .slide_img{
@@ -127,7 +132,7 @@ header nav{
 #home-quote{
     margin: 0;
     min-height: 400px;
-    background: url('../imagenes/bannerabout.jpg') 0 250px;
+    background: url('../imagenes/bannerabout.jpg') center 250px;
     text-align: center;
 }
 
@@ -554,7 +559,7 @@ article {
 }
 
 #list-item #container{
-    margin-left: 18%;
+    margin-left: 15%;
 }
 
 .item-col{
@@ -565,8 +570,8 @@ article {
 }
 
 .item-col img{
-    width: 280px;
-    height: 320px;
+    width: 250px;
+    height: 300px;
 }
 
 .item-col:after {
@@ -616,7 +621,7 @@ article {
     border-radius: 15px 15px 15px 15px;
     cursor: pointer;
     width: 100px;
-    margin-left: 45%;
+    margin-left: 43%;
     margin-top: 20px;
 }
   
@@ -647,6 +652,148 @@ article {
     width: 49%;
 }
 
+#login-form a{
+    margin-top: 20px;
+    text-align: center;
+    color: #ffc300;
+}
+
+#registrate-main{
+    text-align: center;
+    min-height: 400px;
+    background: url(../imagenes/bannerregistro.jpg) 0px -200px;
+    background-color: #ffffff; 
+}
+
+#registrate-main h1{
+    color: #000000;
+    margin-top: 10%;
+    font-size: 40px;
+}
+
+#registrate-main h3{
+    color: #000000;
+}
+
+#registrate-main h3 span{
+    color: #ffc300;
+    padding: 15px;
+}
+
+#registrate-type input[type=submit] {
+    background-color: #ffc300;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 15px 15px 15px 15px;
+    cursor: pointer;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+#registrate-type .wrap-form {
+    text-align: center;
+    margin: 5% 14%;
+    width: 70%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    color: #595959;
+}
+  
+#registrate-type input[type=submit]:hover {
+    background-color: #595959;
+}
+
+.lean-btn{
+    background-color: #ffc300;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 15px 15px 15px 15px;
+    cursor: pointer;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.lean-btn:hover {
+    background-color: #595959;
+}
+
+#registrate-form{
+    display: none;
+}
+
+.close {
+    color: #595959;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+  .close:hover,
+  .close:focus {
+    color: #ffc300;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#registrate-form input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+}
+  
+#registrate-form input[type=submit] {
+    background-color: #ffc300;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px 15px 15px 15px;
+    cursor: pointer;
+    width: 200px;
+    margin-left: 40%;
+    margin-top: 20px;
+}
+  
+#registrate-form input[type=submit]:hover {
+    background-color: #595959;
+}
+  
+#registrate-form .wrap-form {
+    margin: 5% 16%;
+    width: 70%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    color: #595959;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+#registrate-form label{
+    font-weight: bold;
+}
+
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
 
 @media(max-width: 1404px){
     #email-subscribe input[type="email"]{
@@ -757,3 +904,5 @@ article {
         padding: 20px;
     }
 }
+
+
