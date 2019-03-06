@@ -16,8 +16,11 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="home_individual.html">Incio</a></li>
-                        <li><a href="profile_individual.html">Individual</a></li>
+                        <li><a href="home_agent.html">Incio</a></li>
+                        <li><a href="list_individual.html">Lista de Voluntarios</a></li>
+                        <li><a href="list_business.html">Lista de Fundaciones</a></li>
+                        <li><a href="list_event.html">Eventos</a></li>
+                        <li><a href="profile_agent.html">Agente</a></li>
                     </ul>
                 </nav>
             </div>
@@ -32,7 +35,7 @@
                             <th>LUGAR</th>
                             <th>FECHA</th>
                             <th>HORA</th>
-                            <th>ASISTENCIA</th>
+                            <th>ELIMINAR</th>
                         </tr>
                         <tr>
                             <td id="first-col">
@@ -42,7 +45,7 @@
                             <td>Direccion del lugar</td>
                             <td>14/01/2019</td>
                             <td>8 AM</td>
-                            <td><button id="confirm-btn" class="yellow-btn">Confirma</button></td>
+                            <td><button id="#" class="red-btn"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-alt" class="svg-inline--fa fa-trash-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path></svg></button></td>
                         </tr>
                         <tr>
                             <td id="first-col">
@@ -52,7 +55,7 @@
                             <td>Direccion del lugar</td>
                             <td>14/01/2019</td>
                             <td>8 AM</td>
-                            <td><button id="confirm-btn2" class="yellow-btn">Confirma</button></td>
+                            <td><button id="#" class="red-btn"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-alt" class="svg-inline--fa fa-trash-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path></svg></button></td>
                         </tr>
                         <tr>
                             <td id="first-col">
@@ -62,7 +65,7 @@
                             <td>Direccion del lugar</td>
                             <td>14/01/2019</td>
                             <td>8 AM</td>
-                            <td><button id="confirm-btn3" class="yellow-btn">Confirma</button></td>
+                            <td><button id="#" class="red-btn"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-alt" class="svg-inline--fa fa-trash-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path></svg></button></td>
                         </tr>
                     </table>
                 </div>
@@ -93,28 +96,3 @@
         </form>
     </div>
 </section>
-
-<script>
-    var modal = document.getElementById('registrate-form');
-    var confirm = document.getElementById('confirm-btn');
-    var confirm2 = document.getElementById('confirm-btn2');
-    var confirm3 = document.getElementById('confirm-btn3');
-
-    confirm.onclick = function() {
-      modal.style.display = "block";
-    }
-
-    confirm2.onclick = function() {
-      modal.style.display = "block";
-    }
-    
-    confirm3.onclick = function() {
-      modal.style.display = "block";
-    }
-    
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-</script>

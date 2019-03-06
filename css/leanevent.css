@@ -88,6 +88,7 @@ header nav{
     background: url(../imagenes/logo-blanco.png) no-repeat right;
     background-position-x: 80%;
     background-size: 18%;
+    margin-bottom: 100px;
 }
 
 #showcase .slide_img{
@@ -101,7 +102,7 @@ header nav{
 #main-info h2 {
     overflow: hidden;
     text-align: center;
-    margin: 100px 0 30px 0;
+    margin: 0 0 30px 0;
 }
 
 #main-info h2:before,
@@ -381,7 +382,7 @@ label span{
 
 footer{
     font-family: Roboto, Arial, sans-serif;
-    margin-top: 60px;
+    margin-top: 100px;
     text-align: center;
     font-size: 0.7em;
 }
@@ -573,7 +574,9 @@ article {
 }
 
 #list-item #container{
-    margin-left: 15%;
+    display: inline-block;
+    margin-left: 20%;
+    margin-right: auto;
 }
 
 .item-col{
@@ -945,6 +948,26 @@ th, td {
     background-color: #595959;
 }
 
+.red-btn{
+    background-color: rgb(179, 43, 43);
+    color: white;
+    border: none;
+    border-radius: 15px 15px 15px 15px;
+    cursor: pointer;
+    width: 50px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.red-btn:hover {
+    background-color: #595959;
+}
+
+.red-btn svg{
+    width: 25%;
+}
+
 #individual-main{
     text-align: center;
     min-height: 400px;
@@ -958,6 +981,7 @@ th, td {
     margin-top: 10%;
     font-size: 40px;
 }
+
 
 #individual-main h3{
     color: #000000;
@@ -991,7 +1015,59 @@ th, td {
 }
 
 #individual-info img{
+    width: 50%;
+}
+
+.upload-pic{
     width: 40%;
+    float: right;
+}
+
+.upload-pic img{
+    width: 50%;
+}
+
+.upload-pic table{
+    margin-right: 5%;
+}
+
+.upload-pic th, .upload-pic td {    
+    border-bottom: none;
+}
+
+.same-block{
+    width: 100%;
+    display: inline-block;
+}
+
+#contact-form label{
+    display: block;
+}
+
+.profile-form{
+    width: 25%;
+    margin: 0;
+}
+
+#middle-form{
+    padding: 0 11%;
+}
+
+#right-form{
+    float: right;
+}
+
+.small-note {
+    background-color: #ffc300;
+    color: white;
+    border: none;
+    border-radius: 15px 15px 15px 15px;
+    margin: auto;
+    font-weight: bold;
+    height: 20px;
+    width: 5%;
+    text-align: center;
+    display: inline-block;
 }
 
 @-webkit-keyframes animatetop {
@@ -1062,6 +1138,11 @@ th, td {
         width: 100%;
         border-radius: 0;
         margin-bottom: 5px;
+    }
+
+    button{
+        width: 50%;
+        border: 50%;
     }
 
     #email-subscribe svg{
