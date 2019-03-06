@@ -534,12 +534,12 @@ article {
     font-weight: bold;
 }
 
-.haftleft-textbox{
+.halfleft-textbox{
     float: left;
     width: 48%;
 }
 
-.haftright-textbox{
+.halfright-textbox{
     float: right;
     width: 49%;
 }
@@ -950,6 +950,7 @@ th, td {
     min-height: 400px;
     background: url(../imagenes/bannercontacto.jpg) 0 -200px;
     background-color: #ffffff; 
+    margin-bottom: 50px;
 }
 
 #individual-main h1{
@@ -965,6 +966,32 @@ th, td {
 #individual-main h3 span{
     color: #ffc300;
     padding: 15px;
+}
+
+.individual-col{
+    float: left;
+    width: 33%;
+}
+
+.individual-col:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#individual-info svg{
+    float: left;
+    width: 3%;
+    padding: 5px 10px;
+}
+
+#individual-info {
+    margin-left: 10%;
+    margin-right: auto;
+}
+
+#individual-info img{
+    width: 40%;
 }
 
 @-webkit-keyframes animatetop {
