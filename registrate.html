@@ -62,46 +62,103 @@
 </html>
 
 <section id="registrate-form">
-    <div class="wrap-form">
-      <span class="close">&times;</span>
-      <h1>Estar en contacto</h1>
-      <form>  
-        <div class="firstname">
-          <label for="fname">Nombre</label>
-          <input type="text" id="fname" name="firstname" placeholder="Tu Nombre">
-        </div>    
-        <div class="lastname">
-          <label for="lname">Apellido</label>
-          <input type="text" id="lname" name="lastname" placeholder="Tu Apellido">
-        </div>
+        <div class="modal-content">
+            <form>  
+            <div class="modal-header">
+                <h4 id="form-title"></h4>
+            </div> 
+            <div class="modal-body">
+                <div class="haftleft-textbox">
+                <label for="correo">Correo</label>
+                <input type="text" id="correo" name="correo" placeholder="Correo">
+                </div>    
+                <div class="haftright-textbox">
+                <label for="apellido">Contraseña</label>
+                <input type="text" id="contrasena" name="contrasena" placeholder="Contraseña">
+                </div>
+                <div class="haftleft-textbox">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                </div>    
+                <div class="haftright-textbox">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+                </div>
 
-        <label for="correo">Correo</label>
-        <input type="text" id="correo" name="correo" placeholder="Tu correo electrónico">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Dirección">
 
-        <label for="tema">Tema</label>
-        <input type="text" id="tema" name="tema" placeholder="Su asunto de este mensaje">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad">
 
-        <label for="mensaje">Mensaje</label>
-        <textarea rows="14" id="mensaje" name="mensaje" placeholder="Di algo sobre nosotros"></textarea>
-    
-        <input type="submit" value="Enviar mensaje">       
-      </form>
+                <div id="estado-container">
+                    <label for="estado">Estado</label>
+                    <div class="styled-select blue semi-square" id="estado" name="estado">
+                        <select>
+                            <option>Escoger...</option>
+                            <option>...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="zip-code">
+                    <label for="postal">Códigos Postal</label>
+                    <input type="text" id="postal" name="postal" placeholder="">
+                </div>
+                <div id="business-type">
+                    <div class="tipo-options">
+                    <input type="radio" name="tipo" value="1"> 
+                    <label for="tipo">Tipo de negocio 1</label>
+                    </div>
+                    <div class="tipo-options">
+                    <input type="radio" name="tipo" value="2"> 
+                    <label for="tipo">Tipo de negocio 2</label>
+                    </div>
+                    <div class="tipo-options">
+                    <input type="radio" name="tipo" value="3"> 
+                    <label for="tipo">Tipo de negocio 3</label>                    
+                </div>
+                </div>
+                <div class="align-left">
+                    <input type="submit" value="Registrarse"> 
+                </div>   
+            </div>  
+            <div class="align-right">
+                <div class="modal-footer">
+                    <button id="clear-form">Cerrar</button>
+                </div> 
+            </div>
+        </form>
     </div>
 </section>
 
 <script>
     var modal = document.getElementById('registrate-form');
-    
-    var btn = document.getElementById("indv");
+    var tipo = document.getElementById('business-type');
+    var title = document.getElementById('form-title');
+
+    var indv = document.getElementById("indv");
+    var fundacion = document.getElementById("fundacion");
+    var agente = document.getElementById("agente");
     
     var span = document.getElementsByClassName("close")[0];
     
-    btn.onclick = function() {
+    indv.onclick = function() {
       modal.style.display = "block";
+      title.innerHTML = "Registro Individual";  
+      tipo.style.display = "none";
     }
-    
-    span.onclick = function() {
-      modal.style.display = "none";
+
+    fundacion.onclick = function() {
+      modal.style.display = "block";
+      title.innerHTML = "Registro Negocio o Fundacion";  
+      tipo.style.display = "inline-block";
+    }
+
+    agente.onclick = function() {
+      modal.style.display = "block";
+      title.innerHTML = "Registro de Agente LEAN";  
+      tipo.style.display = "none";
     }
     
     window.onclick = function(event) {

@@ -46,7 +46,7 @@
                       <label for="password">Contraseña</label>
                       <input type="text" id="password" name="password" placeholder="Tu Apellido">
                     </div>   
-                    <a href="#"><p>Olvido su contraseña?</p></a>
+                    <a id="forgot"><p>Olvido su contraseña?</p></a>
                     <input type="submit" value="Entra">        
                   </form>
                 </div>
@@ -69,4 +69,38 @@
   </footer>
   </body>
 </html>
-  
+
+<section id="registrate-form">
+    <div class="modal-content">
+        <form>  
+        <div class="modal-header">
+            <h4>Recuperar su Contraseña</h4>
+        </div> 
+        <div class="modal-body">
+            <label for="correo">Correo</label>
+            <input type="text" id="correo" name="correo" placeholder="Correo">          
+        </div>  
+        <div class="align-right">
+            <div class="modal-footer">
+                <button id="clear-form">Cerrar</button>
+                <input type="submit" value="Enviar" id="register-btn"> 
+            </div> 
+        </div>
+    </form>
+</div>
+</section>
+
+<script>
+    var modal = document.getElementById('registrate-form');
+    var forgot = document.getElementById('forgot');
+    
+    forgot.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+</script>
