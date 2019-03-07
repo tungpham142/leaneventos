@@ -16,8 +16,11 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="home_business.html" class="selected">Incio</a></li>
-                        <li><a href="profile_business.html">Fundacion</a></li>
+                        <li><a href="home_agent.html">Incio</a></li>
+                        <li><a href="list_individual.html">Lista de Voluntarios</a></li>
+                        <li><a href="list_business.html" class="selected">Lista de Fundaciones</a></li>
+                        <li><a href="list_event.html">Eventos</a></li>
+                        <li><a href="profile_agent.html">Agente</a></li>
                     </ul>
                 </nav>
             </div>
@@ -25,44 +28,44 @@
         <main>
             <section id="list-event">
                 <div class="container">
-                    <h1>Lista de Eventos</h1>
+                    <h1>Lista de Fundaciones</h1>
                     <table>
                         <tr>
-                            <th>DETAILLES DEL EVENTOS</th>
-                            <th>LUGAR</th>
-                            <th>FECHA</th>
-                            <th>HORA</th>
-                            <th>ASISTENCIA</th>
+                            <th>NOMBRE DE LA FUNDACION</th>
+                            <th>EVENTO</th>
+                            <th>RESPONSABLE</th>
+                            <th>COMISION</th>
+                            <th>CONFIRMA</th>
                         </tr>
                         <tr>
                             <td id="first-col">
-                                <img src="imagenes/minibaner1.jpg" width="18%" height="26%">
+                                <img src="imagenes/nologo.png" width="18%" height="26%">
                                 <span>Nombre del Evento y sus detalles</span>
                             </td>
-                            <td>Direccion del lugar</td>
-                            <td>14/01/2019</td>
-                            <td>8 AM</td>
-                            <td><button id="confirm-btn" class="yellow-btn">Confirma</button></td>
+                            <td>Nombre del Evento</td>
+                            <td>Nombre del Responsable</td>
+                            <td><input class="number-text" type="text" value="1"></td>
+                            <td><button class="yellow-btn">Asignar</button></td>
                         </tr>
                         <tr>
                             <td id="first-col">
-                                <img src="imagenes/minibaner2.jpg" width="18%" height="26%">
+                                <img src="imagenes/nologo.png" width="18%" height="26%">
                                 <span>Nombre del Evento y sus detalles</span>
                             </td>
-                            <td>Direccion del lugar</td>
-                            <td>14/01/2019</td>
-                            <td>8 AM</td>
-                            <td><button id="confirm-btn2" class="yellow-btn">Confirma</button></td>
+                            <td>Nombre del Evento</td>
+                            <td>Nombre del Responsable</td>
+                            <td><input class="number-text" type="text" value="1"></td>
+                            <td><button class="yellow-btn">Asignar</button></td>
                         </tr>
                         <tr>
                             <td id="first-col">
-                                <img src="imagenes/minibaner3.jpg" width="18%" height="26%">
+                                <img src="imagenes/nologo.png" width="18%" height="26%">
                                 <span>Nombre del Evento y sus detalles</span>
                             </td>
-                            <td>Direccion del lugar</td>
-                            <td>14/01/2019</td>
-                            <td>8 AM</td>
-                            <td><button id="confirm-btn3" class="yellow-btn">Confirma</button></td>
+                            <td>Nombre del Evento</td>
+                            <td>Nombre del Responsable</td>
+                            <td><input class="number-text" type="text" value="1"></td>
+                            <td><button class="yellow-btn">Asignar</button></td>
                         </tr>
                     </table>
                 </div>
@@ -93,28 +96,3 @@
         </form>
     </div>
 </section>
-
-<script>
-    var modal = document.getElementById('registrate-form');
-    var confirm = document.getElementById('confirm-btn');
-    var confirm2 = document.getElementById('confirm-btn2');
-    var confirm3 = document.getElementById('confirm-btn3');
-
-    confirm.onclick = function() {
-      modal.style.display = "block";
-    }
-
-    confirm2.onclick = function() {
-      modal.style.display = "block";
-    }
-    
-    confirm3.onclick = function() {
-      modal.style.display = "block";
-    }
-    
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-</script>

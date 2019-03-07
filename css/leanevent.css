@@ -366,7 +366,7 @@ label span{
 }
 
 #social-contact{
-    margin-top: 50px;
+    margin-top: 5%;
     text-align: center;
 }
 
@@ -381,7 +381,7 @@ label span{
 
 footer{
     font-family: Roboto, Arial, sans-serif;
-    margin-top: 100px;
+    margin-top: 10%;
     text-align: center;
     font-size: 0.7em;
 }
@@ -494,7 +494,7 @@ article {
     margin-left: 0;
 }
 
-#contact-form input[type=text], select, textarea {
+#contact-form input[type=text], input[type=date], select, textarea {
     width: 100%; 
     padding: 12px; 
     border: 1px solid #ccc;
@@ -522,7 +522,7 @@ article {
 }
   
 #contact-form .wrap-form {
-    margin: 5% 16%;
+    margin: 5% auto;
     width: 70%;
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -1096,6 +1096,7 @@ th, td {
 }
 
 #add-event-btn{
+    color: white;
     background: green;
 }
 
@@ -1130,6 +1131,35 @@ border: 1px solid #ffc300;
 }
   
 .pagination a:hover:not(.active) {background-color: #ddd;}
+
+#newevent-main{
+    text-align: center;
+    min-height: 400px;
+    background: url(../imagenes/bannerregistro.jpg) 0 -200px;
+    background-color: #ffffff; 
+    margin-bottom: 50px;
+}
+
+#newevent-main h1{
+    color: #000000;
+    margin-top: 10%;
+    font-size: 40px;
+}
+
+
+#newevent-main h3{
+    color: #000000;
+}
+
+#newevent-main h3 span{
+    color: #ffc300;
+    padding: 15px;
+}
+
+.number-text{
+    width: 40%;
+    text-align: center;
+}
 
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
