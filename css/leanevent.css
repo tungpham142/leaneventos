@@ -381,7 +381,7 @@ label span{
 
 footer{
     font-family: Roboto, Arial, sans-serif;
-    margin-top: 10%;
+    margin-top: 6%;
     text-align: center;
     font-size: 0.7em;
 }
@@ -730,9 +730,7 @@ article {
     border: none;
     border-radius: 15px 15px 15px 15px;
     cursor: pointer;
-    width: 200px;
-    margin-top: 20px;
-    margin-bottom: 25px;
+    width: 220px;
 }
 
 .lean-btn:hover {
@@ -1161,6 +1159,151 @@ border: 1px solid #ffc300;
     text-align: center;
 }
 
+.group-button{
+    text-align: left;
+}
+
+#item-detail{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#item-detail td, #item-detail tr{
+    border-bottom: 0;
+    height: 50%;
+    text-align: left;
+}
+
+#item-detail button{
+    border-radius: 0 0 0 0;
+    width: 170px;
+}
+
+.star {
+    font-size: medium;
+    width: 15px;
+    display: inline-block;
+    color: gray;
+}
+.star:last-child {
+    margin-right: 0;
+}
+.star:before {
+    content:'\2605';
+}
+.star.on {
+    color: #ffc300;
+}
+.star.half:after {
+    content:'\2605';
+    color: #ffc300;
+    position: absolute;
+    margin-left: -13px;
+    width: 7px;
+    overflow: hidden;
+}
+
+
+.input-number-group {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .input-number-group input[type=number]::-webkit-inner-spin-button,
+  .input-number-group input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+            appearance: none;
+  }
+  
+  .input-number-group .input-group-button {
+    line-height: calc(80px/2 - 5px);
+  }
+  
+  .input-number-group .input-number {
+    width: 80px;
+    padding: 0 12px;
+    text-align: center;
+    outline: none;
+    display: block;
+    margin: 0;
+  }
+  
+  .input-number-group .input-number,
+  .input-number-group .input-number-decrement,
+  .input-number-group .input-number-increment {
+    border: 1px solid #cacaca;
+    height: 40px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border-radius: 0;
+  }
+  
+  .input-number-group .input-number-decrement,
+  .input-number-group .input-number-increment {
+    display: inline-block;
+    width: 40px;
+    background: #e6e6e6;
+    color: #0a0a0a;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 400;
+}
+  
+#detail-bottom{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    width: 56%;
+}
+
+#item-description{
+    border: solid 1px;
+    border-color: rgba(0,0,0,0.1)
+}
+
+#item-description p{
+    padding: 20px 20px;
+}
+
+#detail-bottom button {
+    margin-bottom: 30px;
+    border-radius: 0 0 0 0;
+    padding: 15px 15px;
+    background-color: whitesmoke;
+    color: #595959;
+}
+
+#detail-bottom .chosen{
+    width: 220px;
+    background: #ffc300;
+    position: relative;
+}
+
+#detail-bottom .chosen:after{
+    content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #ffc300;
+	border-bottom: 0;
+	margin-left: -20px;
+	margin-bottom: -20px;
+}
+
+#detail-bottom button:hover{
+    background-color: #ffc300;
+}
+
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top: 0px; opacity:1}
@@ -1198,7 +1341,8 @@ border: 1px solid #ffc300;
     .contact-col,
     h1,
     #list-item,
-    #login-form
+    #login-form,
+    table
     {
         float: none;
         text-align: center;
