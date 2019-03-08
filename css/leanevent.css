@@ -733,6 +733,7 @@ article {
     width: 220px;
 }
 
+
 .lean-btn:hover {
     background-color: #595959;
 }
@@ -986,6 +987,25 @@ th, td {
     width: 40%;
 }
 
+.top-left {
+    position: absolute;
+    padding: 5px 20px;
+    z-index: 100;
+    font-size: 12px;
+    margin-left: 5px;
+    color: white;
+    background: #ffc300;
+}
+ 
+#red-p{
+    background: #b11414;
+}
+
+#item-pic{
+    height: 400px;
+    width: 350px;
+}
+
 #individual-main{
     text-align: center;
     min-height: 400px;
@@ -1177,7 +1197,11 @@ border: 1px solid #ffc300;
 
 #item-detail button{
     border-radius: 0 0 0 0;
-    width: 170px;
+    width: 140px;
+}
+
+#item-detail button span{
+    padding: 0 10px 0 0;
 }
 
 .star {
@@ -1204,56 +1228,68 @@ border: 1px solid #ffc300;
     overflow: hidden;
 }
 
-
-.input-number-group {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  
-  .input-number-group input[type=number]::-webkit-inner-spin-button,
-  .input-number-group input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-            appearance: none;
-  }
-  
-  .input-number-group .input-group-button {
-    line-height: calc(80px/2 - 5px);
-  }
-  
-  .input-number-group .input-number {
-    width: 80px;
-    padding: 0 12px;
-    text-align: center;
-    outline: none;
-    display: block;
-    margin: 0;
-  }
-  
-  .input-number-group .input-number,
-  .input-number-group .input-number-decrement,
-  .input-number-group .input-number-increment {
-    border: 1px solid #cacaca;
-    height: 40px;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    border-radius: 0;
-  }
-  
-  .input-number-group .input-number-decrement,
-  .input-number-group .input-number-increment {
-    display: inline-block;
-    width: 40px;
-    background: #e6e6e6;
-    color: #0a0a0a;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 2rem;
-    font-weight: 400;
+.quantity {
+    display: inline-block; 
 }
+
+
+.quantity .input-text.qty {
+    width: 80px;
+    height: 35px;
+    padding: 0 5px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #efefef;
+}
+
+.quantity.buttons_added {
+    text-align: left;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: top; 
+}
+
+.quantity.buttons_added input {
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    box-shadow: none;
+}
+
+.quantity.buttons_added .minus,
+.quantity.buttons_added .plus {
+    padding: 7px 10px 8px;
+    height: 35px;
+    background-color: darkgray;
+    border: 1px solid #efefef;
+    cursor:pointer;
+}
+
+.quantity.buttons_added .minus {
+    border-right: 0; 
+}
+
+.quantity.buttons_added .plus {
+    border-left: 0; 
+}
+
+.quantity.buttons_added .minus:hover,
+.quantity.buttons_added .plus:hover {
+    background: #eeeeee; 
+}
+
+.quantity input::-webkit-outer-spin-button,
+.quantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0; 
+}
+
+.quantity.buttons_added .minus:focus,
+.quantity.buttons_added .plus:focus {
+    outline: none; 
+}
+
   
 #detail-bottom{
     margin-top: 100px;
@@ -1314,39 +1350,11 @@ border: 1px solid #ffc300;
     to {top: 0px; opacity:1}
 }
 
-@media(max-width: 1404px){
-    #email-subscribe input[type=email]{
-        width: 150px;
-    }
-}
-
-@media(max-width: 1025px){
-    #email-subscribe input[type=email]{
-        width: 100px;
-    }
-}
-
 @media(max-width: 840px){
-    header #logo,
-    header #logo h1,
-    header nav,
-    header nav ul,
-    header nav li,
-    #email-subscribe,
-    #home-quote,
-    #home-aliados,
-    #contact-main,
-    #contact-form,
-    #about-main,
-    .contact-col,
-    h1,
-    #list-item,
-    #login-form,
-    table
+    *
     {
         float: none;
         text-align: center;
-        width: 100%;
     }
 
     header nav li{
@@ -1360,28 +1368,6 @@ border: 1px solid #ffc300;
     #main-info h2{
         margin: 40px;
         margin-bottom: 0;
-    }
-
-    #email-subscribe button{
-        display: block;
-        width: 100%;
-        border-radius: 0;
-    }
-
-    #email-subscribe input[type=email]{
-        display: block;
-        width: 100%;
-        border-radius: 0;
-        margin-bottom: 5px;
-    }
-
-    button{
-        width: 50%;
-        border: 50%;
-    }
-
-    #email-subscribe svg{
-        display: none;
     }
 
     .contact-col svg{
@@ -1427,6 +1413,55 @@ border: 1px solid #ffc300;
 
     footer{
         padding: 20px;
+    }
+
+    .icon-img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    #email-subscribe h2{
+        width: 100%;
+    }
+
+    #email-subscribe{
+        padding: 0;
+    }
+
+    #email-subscribe button{
+        text-align: center;
+        width: 100%;
+        border-radius: 0;
+        margin-left: 10%;
+    }
+
+    #email-subscribe input[type=email]{
+        text-align: center;
+        width: 95%;
+        border-radius: 0;
+        margin-bottom: 5px;
+        margin-left: 10%;
+
+    }
+
+    button{
+        width: 50%;
+        border: 50%;
+    }
+
+    #email-subscribe svg{
+        display: none;
+    }
+
+    #detail-bottom {
+        width: 100px;
+        font-size: 12px;
+    }
+
+    #detail-bottom .chosen{
+        width: 100px;
+        font-size: 12px;
     }
 }
 

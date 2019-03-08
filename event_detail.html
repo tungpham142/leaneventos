@@ -2,7 +2,7 @@
     <head>
         <title>Lean Eventos</title>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./css/leanevent.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -38,7 +38,10 @@
                 <div id="container">
                     <table>
                         <tr>
-                            <td rowspan="6"><img src="imagenes/minibaner4.jpg" height="400px" width="400px"></td>
+                            <td rowspan="6">
+                                <p class="top-left" id="red-p"> Sale </p>
+                                <img src="imagenes/minibaner4.jpg" id="item-pic">
+                            </td>
                             <td><h2>NO PERDAMOS LA FE</h2>
                         </tr>
                         <tr>
@@ -55,7 +58,6 @@
                                 </div>   
                                 (74 Rating)
                             </td>
-
                         </tr>
                         <tr>
                             <td colspan="3">
@@ -73,20 +75,16 @@
                         </tr>
                         <tr>
                             <td>
-                                <div class="input-group input-number-group">
-                                    <div class="input-group-button">
-                                    <span class="input-number-decrement">-</span>
-                                    </div>
-                                    <input class="input-number" type="number" value="1" min="0" max="1000">
-                                    <div class="input-group-button">
-                                    <span class="input-number-increment">+</span>
-                                    </div>
+                                <div class="quantity buttons_added">
+                                    <input type="button" value="-" class="minus">
+                                    <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                                    <input type="button" value="+" class="plus">
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <button class="lean-btn"><i class="fas fa-shopping-cart"></i>Comprar</button>
+                                <button class="lean-btn" id="comprar-btn"><span><i class="fas fa-shopping-cart"></span></i>Comprar</button>
                             </td>
                         </tr>
                     </table>
@@ -120,4 +118,3 @@
     </footer>
     </body>
 </html>
-  
