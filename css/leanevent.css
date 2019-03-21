@@ -4,7 +4,9 @@ body {
     background-color: #FFFFFF ;
     color: #595959 ;
     padding: 0;
-    margin: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -13,7 +15,6 @@ h1 {
 }
 
 #container  {
-    width: 80%;
     margin: auto;
     overflow: hidden;
 }
@@ -575,19 +576,19 @@ article {
 
 #list-item #container{
     display: inline-block;
-    margin-left: 16%;
+    margin-left: auto;
     margin-right: auto;
 }
 
 .item-col{
     margin-top: 50px;
-    margin-right: 2%;
+    margin-right: 15px;
     float: left;
     text-align: center;
 }
 
 .item-col img{
-    width: 250px;
+    width: 270px;
     height: 300px;
 }
 
