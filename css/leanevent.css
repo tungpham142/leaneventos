@@ -1008,8 +1008,8 @@ th, td {
 }
 
 #item-pic{
-    height: 400px;
-    width: 400px;
+    height: 420px;
+    width: 380px;
 }
 
 #individual-main{
@@ -1197,7 +1197,6 @@ border: 1px solid #ffc300;
 
 #item-detail td, #item-detail tr{
     border-bottom: 0;
-    height: 50%;
     text-align: left;
 }
 
@@ -1315,7 +1314,7 @@ border: 1px solid #ffc300;
 }
 
 #detail-bottom button {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     border-radius: 0 0 0 0;
     padding: 15px 15px;
     background-color: whitesmoke;
@@ -1323,7 +1322,6 @@ border: 1px solid #ffc300;
 }
 
 #detail-bottom .chosen{
-    width: 220px;
     background: #ffc300;
     position: relative;
 }
@@ -1334,9 +1332,9 @@ border: 1px solid #ffc300;
 	bottom: 0;
 	left: 50%;
 	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-top-color: #ffc300;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: #ffc300;
 	border-bottom: 0;
 	margin-left: -20px;
 	margin-bottom: -20px;
@@ -1351,9 +1349,16 @@ border: 1px solid #ffc300;
     to {top: 0px; opacity:1}
 }
   
-  @keyframes animatetop {
+@keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top: 0px; opacity:1}
+}
+
+@media(max-width: 1100px){
+    #item-pic{
+        height: 250px;
+        width: 250px;
+    }    
 }
 
 @media(max-width: 900px){
@@ -1401,11 +1406,6 @@ border: 1px solid #ffc300;
         min-height: 150px;
     }
 
-    #home-aliados .slider-icon{
-        margin-left: 2%;
-        width: 100%
-    }
-
     #social-contact svg{
         width: 10%;
     }
@@ -1417,12 +1417,6 @@ border: 1px solid #ffc300;
 
     footer{
         padding: 20px;
-    }
-
-    .icon-img {
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
     }
 
     #email-subscribe h2{
@@ -1459,13 +1453,30 @@ border: 1px solid #ffc300;
     }
 
     #detail-bottom {
-        width: 100px;
         font-size: 12px;
     }
 
-    #detail-bottom .chosen{
-        width: 100px;
-        font-size: 12px;
+    #item-pic{
+        height: 200px;
+        width: 200px;
+        text-align: center;
+    }   
+
+    #red-p{
+        display: none;
+    }
+
+    #detail-bottom .chosen:after{
+        border: none;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+        margin: 0;
+    }
+
+    #item-detail td, #item-detail tr{
+        text-align: center;
     }
 }
 
