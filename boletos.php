@@ -43,7 +43,40 @@
                 </div>
             </section>
             <section id="list-item">
-                    <div id="container">
+                <?php
+                    $server = "localhost:3306";
+                    $username = "tungpvut_wp1";
+                    $password = "Tung!402";
+                    $db = "tungpvut_LEANEVENTO";
+                    
+                    $conn = new mysqli($server, $username, $password, $db);
+                    // Check connection
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }                    
+                    $sql = "SELECT id, eventname, link, price FROM Events";
+                    $result = $conn->query($sql);
+                    echo " ";
+                    if ($result->num_rows > 0) {                     
+                        echo "<div id=\"container\">";
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                            $id = $row["id"];
+                            $eventName = $row["eventname"];
+                            $link = $row["link"];
+                            $price = $row["price"];
+                            echo  "<div class=\"item-col\">
+                            <p class=\"top-left\">New</p>
+                            <a href=\"event_detail.php?id=$id\"><img src=\"$link\" alt=\"\"></a>
+                            <h5>$eventName</h5>
+                            <p id=\"social-text\">$price</p>
+                            </div>";
+                        }
+                        echo "</div>";
+                    }
+                    $conn->close();
+                ?>
+                    <!-- <div id="container">
                         <div class="item-col">
                             <p class="top-left">New</p>
                             <a href="event_detail.html"><img src="imagenes/minibaner4.jpg" alt=""></a>
@@ -68,7 +101,7 @@
                             <h5>PRO UNA SONRISA DE VIDA</h5>
                             <p id="social-text">$300.00</p>
                         </div>
-                    </div>
+                    </div> -->
             </section>
             <section id="email-subscribe">
             <div id="container">
@@ -101,4 +134,4 @@
     </footer>
     </body>
 </html>
-  
+

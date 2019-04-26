@@ -22,7 +22,7 @@
             <li><a href="registrate.html">Registrate</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="iniciar.html">Iniciar Sesion</a></li>
-            <li><a href="boletos.html">Comprar Boletos</a></li>
+            <li><a href="boletos.php">Comprar Boletos</a></li>
           </ul>
         </nav>
       </div>
@@ -109,8 +109,8 @@
           <h2>
             Registrese para rescibir un boletín
           </h2>
-          <form>
-            <input type="email" placeholder="Introduce tu correo electrónico">
+          <form action="./mail.php" method="POST">
+            <input type="email" name="email" placeholder="Introduce tu correo electrónico">
             <button type="submit" class="subscribe-button">Suscribir</button>
           </form>
         </div>

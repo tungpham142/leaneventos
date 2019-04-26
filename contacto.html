@@ -78,21 +78,21 @@
       <section id="contact-form">
         <div class="wrap-form">
           <h1>Estar en contacto</h1>
-          <form>  
+          <form name="contact" action="./validate-contact.php" onsubmit="return validateForm()" method="POST">  
             <div class="nombre halfleft-textbox">
               <label for="nombre">Nombre</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre">
+              <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>
             </div>    
             <div class="apellido halfright-textbox">
               <label for="apellido">Apellido</label>
-              <input type="text" id="apellido" name="apellido" placeholder="Tu Apellido">
+              <input type="text" id="apellido" name="apellido" placeholder="Tu Apellido" required>
             </div>
 
             <label for="correo">Correo</label>
-            <input type="text" id="correo" name="correo" placeholder="Tu correo electrónico">
+            <input type="text" id="correo" name="correo" placeholder="Tu correo electrónico" required>
 
             <label for="tema">Tema</label>
-            <input type="text" id="tema" name="tema" placeholder="Su asunto de este mensaje">
+            <input type="text" id="tema" name="tema" placeholder="Su asunto de este mensaje" required> 
 
             <label for="mensaje">Mensaje</label>
             <textarea rows="14" id="mensaje" name="mensaje" placeholder="Di algo sobre nosotros"></textarea>
@@ -120,3 +120,36 @@
   </body>
 </html>
   
+<script>
+  function validateForm(){
+        var correo = document.forms["contact"]["correo"];
+        var tema = document.forms["contact"]["tema"];
+        var nombre = document.forms["contact"]["nombre"];
+        var apellido = document.forms["contact"]["apellido"];
+
+        if (correo.value == "")                              
+        { 
+            window.alert("This field is required."); 
+            correo.focus(); 
+            return false; 
+        } 
+        if (tema.value == "")                                  
+        { 
+            window.alert("This field is required."); 
+            tema.focus(); 
+            return false; 
+        } 
+        if (nombre.value == "" || !(/^[a-zA-Z ]*/.test(nombre)))                                  
+        { 
+            window.alert("This field is required."); 
+            nombre.focus(); 
+            return false; 
+        } 
+        if (apellido.value == "" || !(/^[a-zA-Z ]*/.test(apellido)))                                  
+        { 
+            window.alert("This field is required."); 
+            apellido.focus(); 
+            return false; 
+        } 
+    }
+</script>

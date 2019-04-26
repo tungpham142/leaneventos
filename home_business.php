@@ -17,7 +17,15 @@
                 <nav>
                     <ul>
                         <li><a href="home_business.html" class="selected">Incio</a></li>
-                        <li><a href="profile_business.html">Fundacion</a></li>
+                        <?php
+                            $id = $_GET["id"];
+                            if($id !== ""){
+                                echo "<li><a href=\"profile_business.php?id=$id\">Fundacion</a></li>";
+                            }
+                            else{
+                                echo "<li><a href=\"profile_business.html\">Fundacion</a></li>";
+                            }
+                        ?>         
                     </ul>
                 </nav>
             </div>

@@ -16,10 +16,14 @@
         </div>
         <nav>
           <ul>
-            <li><a href="home_agent.html" class="selected">Incio</a></li>
+            <?php
+              $id = $_GET["id"];
+              echo"<li><a href=\"home_agent.php?id=$id\" class=\"selected\">Incio</a></li>";
+
+            ?>
             <li><a href="list_individual.html">Lista de Voluntarios</a></li>
             <li><a href="list_business.html">Lista de Fundaciones</a></li>
-            <li><a href="list_event.html">Eventos</a></li>
+            <li><a href="list_event.php">Eventos</a></li>
             <li><a href="profile_agent.html">Agente</a></li>
           </ul>
         </nav>
