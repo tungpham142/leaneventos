@@ -36,7 +36,8 @@
                     <div id="add-event">
                         <a href="new_event.html" class="close-btn button" id="add-event-btn">Agregar</a>
                     </div>
-                    <table>
+                    <form>
+                        <table>
                         <tr>
                             <th>DETAILLES DEL EVENTOS</th>
                             <th>LUGAR</th>
@@ -78,9 +79,9 @@
                                 }
                             }
                             $conn->close();
-                        ?>
-                       
-                    </table>
+                        ?>                     
+                        </table>
+                    </form>
                     <div class="number-paging">
                         <div class="pagination">
                         <a href="#">&laquo;</a>
