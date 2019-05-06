@@ -74,8 +74,8 @@ if($validated)
 {
     echo "Validate Successful<BR>";
     $server = "localhost:3306";
-    $username = "tungpvut_wp1";
-    $password = "Tung!402";
+    $username = "root";
+    $password = "";
     $db = "tungpvut_LEANEVENTO";
 
     $conn = new mysqli($server, $username, $password, $db);
@@ -87,8 +87,8 @@ if($validated)
 
 
 
-    $sql = "Insert into Member (FirstName, LastName, Address, City, zip, Email, Password) 
-    values ('$nombre', '$apellido', '$direccion', '$ciudad', '$postal', '$correo', '$contrasena')";
+    $sql = "Insert into Member (FirstName, LastName, Address, City, zip, Email, Password, Type) 
+    values ('$nombre', '$apellido', '$direccion', '$ciudad', '$postal', '$correo', '$contrasena', 3)";
     
     if ($conn->query($sql) === TRUE)
     {
