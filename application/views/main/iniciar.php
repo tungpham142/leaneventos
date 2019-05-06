@@ -8,18 +8,21 @@
       <section id="login-form">
               <div class="wrap-form">
                 <h1>Iniciar Sesión</h1>
-                <form name="iniciar" action="./login.php" method="POST">  
+                <form name="iniciar" action="<?php echo base_url(); ?>iniciar/validate" method="POST">  
                   <div class="username">
                     <label for="username">Nombre de Usuario</label>
                     <input type="text" id="username" name="username" placeholder="Tu Nombre" required>
                   </div>    
                   <div class="password">
                     <label for="password">Contraseña</label>
-                    <input type="text" id="password" name="password" placeholder="Tu Apellido" required>
+                    <input type="password" name="password" placeholder="Tu Apellido" required>
                   </div>   
                   <a id="forgot"><p>Olvido su contraseña?</p></a>
                   <input type="submit" value="Entra">        
                 </form>
+                <div style="text-align: center;">
+                <?php  echo '<label style="text-align: center;">'.$this->session->flashdata("error").'</label>'; ?>
+                </div>
               </div>
           </section>
       <section id="social-contact">

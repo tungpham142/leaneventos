@@ -39,7 +39,7 @@
                 </div>    
                 <div class="halfright-textbox">
                 <label for="contrasena">Contraseña</label>
-                <input type="text" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
                 </div>
                 <div class="halfleft-textbox">
                 <label for="nombre">Nombre</label>
@@ -113,21 +113,21 @@
       modal.style.display = "block";
       title.innerHTML = "Registro Individual";  
       tipo.style.display = "inline-block";
-      form_type.value(3);
+      form_type.value = 3;
     }
 
     fundacion.onclick = function() {
       modal.style.display = "block";
       title.innerHTML = "Registro Negocio o Fundacion";  
       tipo.style.display = "inline-block";
-      form_type.value(2);
+      form_type.value = 2;
     }
 
     agente.onclick = function() {
       modal.style.display = "block";
       title.innerHTML = "Registro de Agente LEAN";  
       tipo.style.display = "inline-block";
-      form_type.value(1);
+      form_type.value = 1;
     }
     
     window.onclick = function(event) {

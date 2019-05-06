@@ -620,7 +620,7 @@ article {
     padding: 15px;
 }
 
-#login-form input[type=text], select, textarea {
+#login-form input[type=text], input[type=password], select, textarea {
     width: 100%; 
     padding: 12px; 
     border: 1px solid #ccc;
@@ -765,7 +765,7 @@ article {
     cursor: pointer;
 }
 
-#registrate-form input[type=text], select, textarea {
+#registrate-form input[type=text], input[type=password], select, textarea {
     width: 100%; 
     padding: 12px; 
     border: 1px solid #ccc;
