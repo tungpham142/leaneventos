@@ -64,8 +64,8 @@ class Agent extends CI_Controller {
 			$email = $this->session->userdata('email');
             $data["member"] = $this->Member_model->get_member($email);
 
-            $this->load->model("Evento_model");
-            $data["events"] = $this->Evento_model->get_eventos();
+            $this->load->model("Event_model");
+            $data["events"] = $this->Event_model->get_event();
 
 			if($data["member"]["member_type"] == 1)
 			{
@@ -86,11 +86,11 @@ class Agent extends CI_Controller {
 			$email = $this->session->userdata('email');
             $data["member"] = $this->Member_model->get_member($email);
 
-            $this->load->model("Evento_model");
+			$this->load->model("Event_model");
 
 			if($data["member"]["member_type"] == 1)
 			{
-				$this->load->view('agent/new_event', $data);
+				$this->load->view('agent/new_event');
 			}
         }
         else
@@ -102,28 +102,27 @@ class Agent extends CI_Controller {
     function EventValidate()
     {
         $this->load->library('form_validation');
-		$this->form_validation->set_rules("nombre", "Nombre", "required|alpha");
+		$this->form_validation->set_rules("nombre", "Nombre", "required");
 		$this->form_validation->set_rules("responsable", "Responsable", "required");
 		$this->form_validation->set_rules("lugar", "Lugar", "required");
 		$this->form_validation->set_rules("fecha", "Fecha", "required");
 
 		if($this->form_validation->run())
 		{
-			$this->load->model("Evento_model");
+			$this->load->model("Event_model");
 			$data = array(
-				"firstname" => $this->input->post("nombre"),
+				"eventname" => $this->input->post("nombre"),
 				"agent" => $this->input->post("responsable"),
 				"address" => $this->input->post("lugar"),
-				"date" => $this->input->post("fecha")
+				"date" => $this->input->post("fecha"),
+				"hora" => $this->input->post("hora"),
+				"price" => $this->input->post("boleto"),
+				"link" => '/leaneventos/imagenes/nologo.png'
 			);
 
-			$this->Evento_model->insert_evento($data);
+			$this->Event_model->insert_event($data);
 
-			$data['redirect'] = $this->uri->segment(1);
-			$data['success'] = "Create New Event Successful! Go back to event list.";
-			$this->load->view('templates/header');
-			$this->load->view('templates/result', $data);
-			$this->load->view('templates/footer');
+			$this->event();
 		}
 		else
 		{
@@ -137,8 +136,98 @@ class Agent extends CI_Controller {
     
     function DeleteEvent($id)
 	{
-        echo'OK';
-    }
+
+		if($this->session->userdata('email') != '')
+		{
+            $this->load->model('Member_model');
+			$email = $this->session->userdata('email');
+            $data["member"] = $this->Member_model->get_member($email);
+
+            $this->load->model("Event_model");
+
+			if($data["member"]["member_type"] == 1)
+			{
+				$this->load->model('Event_model');
+				$this->Event_model->delete_event($id);
+				
+				$this->event();
+			}
+        }
+        else
+        {
+            redirect(base_url() . 'Iniciar');
+        }
+	}
+	
+	function UpdateEvent($id)
+	{
+
+		if($this->session->userdata('email') != '')
+		{
+            $this->load->model('Member_model');
+			$email = $this->session->userdata('email');
+            $data["member"] = $this->Member_model->get_member($email);
+
+            $this->load->model("Event_model");
+
+			if($data["member"]["member_type"] == 1)
+			{
+				$this->load->model('Event_model');
+				$data['event'] = $this->Event_model->get_event($id);
+				
+				$this->load->view('agent/update_event', $data);
+			}
+        }
+        else
+        {
+            redirect(base_url() . 'Iniciar');
+        }
+	}
+	
+	function Updated()
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules("nombre", "Nombre", "required");
+		$this->form_validation->set_rules("responsable", "Responsable", "required");
+		$this->form_validation->set_rules("lugar", "Lugar", "required");
+		$this->form_validation->set_rules("fecha", "Fecha", "required");
+		if($this->input->post("link") == NULL)
+		{
+			$link = '/leaneventos/imagenes/nologo.png';
+		}
+		else
+		{
+			$link = $this->input->post("link");
+		}
+
+		if($this->form_validation->run())
+		{
+			$this->load->model("Event_model");
+			$id = $this->input->post("id");
+			$data = array(
+				"eventname" => $this->input->post("nombre"),
+				"agent" => $this->input->post("responsable"),
+				"address" => $this->input->post("lugar"),
+				"date" => $this->input->post("fecha"),
+				"hora" => $this->input->post("hora"),
+				"price" => $this->input->post("boleto"),
+				"description" => $this->input->post("description"),
+				"link" => $link
+			);
+
+			$this->Event_model->update_event($id, $data);
+
+			$this->event();
+		}
+		else
+		{
+			$data['redirect'] = $this->uri->segment(1);
+			$data['success'] = FALSE;
+			$this->load->view('templates/header');
+			$this->load->view('templates/result', $data);
+			$this->load->view('templates/footer');
+		}
+	}
 
     function profile()
 	{
@@ -149,13 +238,61 @@ class Agent extends CI_Controller {
 			$data["member"] = $this->Member_model->get_member($email);
 			if($data["member"]["member_type"] == 1)
 			{
-				$this->load->view('agent/profile');
+				$this->load->view('agent/profile', $data);
 			}
         }
         else
         {
             redirect(base_url() . 'Iniciar');
         }
-    }
+	}
+	
+	function UpdateProfile()
+	{
+
+		if($this->session->userdata('email') != '')
+		{
+            $this->load->model('Member_model');
+			$email = $this->session->userdata('email');
+			$data["member"] = $this->Member_model->get_member($email);
+			if($data["member"]["member_type"] == 1)
+			{
+				$this->load->library('form_validation');
+				$this->form_validation->set_rules("nombre", "Nombre", "required");
+				$this->form_validation->set_rules("apellido", "Apellido", "required");
+				$this->form_validation->set_rules("correo", "Correo", "required|valid_email");
+				$this->form_validation->set_rules("contrasena", "Contraseña", "required");
+
+				if($this->form_validation->run())
+				{
+					$id = $data["member"]["id"];
+					$data = array(
+						"firstname" => $this->input->post("nombre"),
+						"lastname" => $this->input->post("apellido"),
+						"email" => $this->input->post("correo"),
+						"phone" => $this->input->post("telefono"),
+						"username" => $this->input->post("usuario"),
+						"password" => $this->input->post("contrasena")
+					);
+
+					$this->Member_model->update_member($id, $data);
+
+					$this->profile();
+				}
+				else
+				{
+					$data['redirect'] = $this->uri->segment(1);
+					$data['success'] = FALSE;
+					$this->load->view('templates/header');
+					$this->load->view('templates/result', $data);
+					$this->load->view('templates/footer');
+				}
+			}
+        }
+        else
+        {
+            redirect(base_url() . 'Iniciar');
+        }		
+	}
 }
 ?>

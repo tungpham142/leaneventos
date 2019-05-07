@@ -3,7 +3,7 @@
         <title>Lean Eventos</title>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width">
-        <link href="./css/leanevent.css" rel="stylesheet">
+        <link href="/leaneventos/css/leanevent.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
@@ -11,21 +11,14 @@
         <header>
             <div id="container">
                 <div id="logo">
-                    <a href="index.html"><img src="imagenes/logo.png" alt="logo-img"/></a>
+                    <a href="<?php echo base_url(); ?>Business"><img src="/leaneventos/imagenes/logo.png" alt="logo-img"/></a>
                     <h1 class="logo-txt">LEANEVENTOS</p>
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="home_individual.html" class="selected">Incio</a></li>
-                        <?php
-                            $id = $_GET["id"];
-                            if($id !== ""){
-                                echo "<li><a href=\"profile_individual.php?id=$id\">Fundacion</a></li>";
-                            }
-                            else{
-                                echo "<li><a href=\"profile_individual.html\">Fundacion</a></li>";
-                            }
-                        ?>  
+                        <li><a href="<?php echo base_url(); ?>Individual" class="selected">Incio</a></li>
+                        <li><a href="<?php echo base_url(); ?>Individual/Profile">Individual</a></li>
+                        <li><a href="<?php echo base_url(); ?>Iniciar/logout">Log out</a></li>      
                     </ul>
                 </nav>
             </div>
@@ -42,36 +35,29 @@
                             <th>HORA</th>
                             <th>ASISTENCIA</th>
                         </tr>
-                        <tr>
-                            <td id="first-col">
-                                <img src="imagenes/minibaner1.jpg" width="120px" height="140px">
-                                <span>Nombre del Evento y sus detalles</span>
-                            </td>
-                            <td>Direccion del lugar</td>
-                            <td>14/01/2019</td>
-                            <td>8 AM</td>
-                            <td><button id="confirm-btn" class="yellow-btn">Confirma</button></td>
-                        </tr>
-                        <tr>
-                            <td id="first-col">
-                                <img src="imagenes/minibaner2.jpg" width="120px" height="140px">
-                                <span>Nombre del Evento y sus detalles</span>
-                            </td>
-                            <td>Direccion del lugar</td>
-                            <td>14/01/2019</td>
-                            <td>8 AM</td>
-                            <td><button id="confirm-btn2" class="yellow-btn">Confirma</button></td>
-                        </tr>
-                        <tr>
-                            <td id="first-col">
-                                <img src="imagenes/minibaner3.jpg" width="120px" height="140px">
-                                <span>Nombre del Evento y sus detalles</span>
-                            </td>
-                            <td>Direccion del lugar</td>
-                            <td>14/01/2019</td>
-                            <td>8 AM</td>
-                            <td><button id="confirm-btn3" class="yellow-btn">Confirma</button></td>
-                        </tr>
+                        <?php                 
+                            foreach($events as $event)
+                            { 
+                                $eventid = $event["id"];
+                                $eventname = $event["eventname"];
+                                $responsible = $event["agent"];
+                                $address = $event["address"];
+                                $time = $event["hora"];
+                                $date = $event["date"];
+                                $link = $event["link"];
+                                ?>
+                            <tr>
+                                <td id="first-col">
+                                    <img src="<?php echo $link; ?>" width="120px" height="140px">
+                                    <span> <?php echo $eventname; ?> </span>
+                                </td>
+                                <td><?php echo $address; ?></td>
+                                <td><?php echo $date; ?></td>
+                                <td><?php echo $time; ?></td>
+                                <td><button id="confirm-btn" class="yellow-btn">Confirma</button></td>
+                            </tr>
+                            <?php }
+                            ?>          
                     </table>
                 </div>
             </section>

@@ -17,6 +17,11 @@
             $this->db->insert("Member", $data);
         }
 
+        function update_member($id, $data)
+        {
+            $this->db->update('Member', $data, array('id' => $id));
+        }
+
         function can_login($email, $password)
         {
             $query = $this->db->get_where("Member", array('email' => $email, 'password' => $password));

@@ -58,7 +58,7 @@ class Iniciar extends CI_Controller {
 			}
 			if($data["member"]["member_type"] == 2)
 			{
-				$this->load->view('business/home');
+				redirect(base_url() . 'Business');
 			}
 			if($data["member"]["member_type"] == 3)
 			{

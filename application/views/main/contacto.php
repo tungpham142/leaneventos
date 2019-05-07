@@ -49,7 +49,7 @@
     <section id="contact-form">
       <div class="wrap-form">
         <h1>Estar en contacto</h1>
-        <form name="contact" action="./validate-contact.php" onsubmit="return validateForm()" method="POST">  
+        <form name="contact" action="<?php echo base_url(); ?>Contacto/Validate" onsubmit="return validateForm()" method="POST">  
           <div class="nombre halfleft-textbox">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>

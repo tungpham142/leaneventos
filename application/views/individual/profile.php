@@ -8,24 +8,21 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
     <body>
-    <header>
-        <div id="container">
-            <div id="logo">
-                <a href="<?php echo base_url(); ?>Iniciar/logedin"><img src="/leaneventos/imagenes/logo.png" alt="logo-img"/></a>
-                <h1 class="logo-txt">LEANEVENTOS</p>
+        <header>
+            <div id="container">
+                <div id="logo">
+                    <a href="<?php echo base_url(); ?>Individual"><img src="/leaneventos/imagenes/logo.png" alt="logo-img"/></a>
+                    <h1 class="logo-txt">LEANEVENTOS</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="<?php echo base_url(); ?>Individual" >Incio</a></li>
+                        <li><a href="<?php echo base_url(); ?>Individual/Profile" class="selected">Individual</a></li>
+                        <li><a href="<?php echo base_url(); ?>Iniciar/logout">Log out</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-            <ul>
-            <li><a href="<?php echo base_url(); ?>Iniciar/logedin" >Incio</a></li>
-                <li><a href="<?php echo base_url(); ?>Agent/voluntarios">Lista de Voluntarios</a></li>
-                <li><a href="<?php echo base_url(); ?>Agent/business">Lista de Fundaciones</a></li>
-                <li><a href="<?php echo base_url(); ?>Agent/event">Eventos</a></li>
-                <li><a href="<?php echo base_url(); ?>Agent/profile" class="selected">Agente</a></li>
-                <li><a href="<?php echo base_url(); ?>Iniciar/logout">Log out</a></li>
-            </ul>
-            </nav>
-        </div>
-    </header>
+        </header>
         <main>
            <section id="individual-main">
                 <div id="container">
@@ -67,7 +64,7 @@
             <section id="contact-form">
                 <div class="wrap-form">
                 <h1>Estar en contacto</h1>
-                <form name="update-agent" action="<?php echo base_url(); ?>Agent/UpdateProfile" method="POST">    
+                <form name="update-agent" action="<?php echo base_url(); ?>Individual/UpdateProfile" method="POST">    
                     <div class="halfleft-textbox align-left">
                         <div class="nombre">
                         <label for="nombre">Nombre</label>
